@@ -1,25 +1,12 @@
-import datetime
-from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.http import HttpResponse
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.decorators import api_view
 from django.http.response import JsonResponse, Http404
-from rest_framework.parsers import JSONParser
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.contrib.auth.models import User
 from .serializers import TutorialSerializer,UseSerializer
 from .models import Tutorial
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework.authtoken.models import Token
 from rest_framework_simplejwt.tokens import RefreshToken
-import jwt
-
-
-
-
 
 
 # def index(request):

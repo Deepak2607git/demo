@@ -27,7 +27,7 @@ class Choice(models.Model):
         return self.choice_text
 
 class Tutorial(models.Model):
-    title = models.CharField(max_length=70, blank=False, default='')
+    title = models.IntField(max_length=70, blank=False, default='')
     description = models.CharField(max_length=200,blank=False, default='')
     published = models.BooleanField(default=False)
 
@@ -35,7 +35,6 @@ class tutlang(models.Model):
     title = models.CharField(max_length=70, blank=False, default='')
     description = models.CharField(max_length=200,blank=False, default='')
     published = models.CharField()
-
 
 class User(AbstractBaseUser):
     email = models.EmailField(max_length=255, unique=True)
