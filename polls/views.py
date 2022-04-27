@@ -227,9 +227,4 @@ class UserView(APIView):
         print(user,"user")
         return JsonResponse({"message":"user created successfully"}, status=status.HTTP_201_CREATED)
 
-    def get(self,request):
-        users = get_user_model().objects.all()
-        # users.get_queryset()
-        serializer = UseSerializer(users, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
 
